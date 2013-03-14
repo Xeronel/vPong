@@ -8,21 +8,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataTypes", "DataTypes\DataTypes.csproj", "{D74A7AB4-779D-4113-A088-0A008898E9A1}"
 EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 4
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = http://dev.halfcrap.com/tfs/halfcrap
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = vPong\\vPongContent\\vPongContent.contentproj
-		SccProjectName1 = vPong/vPongContent
-		SccLocalPath1 = vPong\\vPongContent
-		SccProjectUniqueName2 = DataTypes\\DataTypes.csproj
-		SccProjectName2 = DataTypes
-		SccLocalPath2 = DataTypes
-		SccProjectUniqueName3 = vPong\\vPong\\vPong.csproj
-		SccProjectName3 = vPong/vPong
-		SccLocalPath3 = vPong\\vPong
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
 		Release|x86 = Release|x86
