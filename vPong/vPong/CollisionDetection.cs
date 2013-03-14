@@ -45,6 +45,7 @@ namespace vPong
         }
 
         private int _degree;
+        private float angle;
         private Vector2 _position;
         private SideList _side;
         private List<Vector2> _line;
@@ -128,20 +129,19 @@ namespace vPong
 
         public List<Vector2> RayTrace(Vector2 origin, Vector2 destination, float radius, ContentManager content)
         {
-            circle = new Circle(radius, origin, content);    
+            circle = new Circle(100, origin, content);    
             _line = new List<Vector2>();
             float m = (origin.Y - destination.Y) / (origin.X - destination.X);
             float b = origin.Y - (m * origin.X);
 
             double deltaY = destination.Y - origin.Y;
             double deltaX = destination.X - origin.X;
-            float angle = (float)(Math.Atan2(deltaY, deltaX) * 180 / Math.PI);
+            angle = (float)(Math.Atan2(deltaY, deltaX) * 180 / Math.PI);
 
             //Center Line
             float x1 = origin.X + radius * (float)Math.Cos(MathHelper.ToRadians(angle));
             float y1 = origin.Y + radius * (float)Math.Sin(MathHelper.ToRadians(angle));
 
-            //origin = new Vector2(x1, y1);
             //Up & Right or Down & Right
             if (m < 0 && origin.X < destination.X || m > 0 && origin.X < destination.X)
             {
@@ -153,6 +153,8 @@ namespace vPong
             {
                 destination = new Vector2(destination.X - radius, destination.Y - radius);
             }
+
+            origin = new Vector2(x1, y1);
 
             for (int x = (int)origin.X; x < (int)destination.X; x++)
             {
@@ -182,7 +184,7 @@ namespace vPong
 
         public void DrawLine(SpriteBatch spriteBatch, Texture2D texture, List<Vector2> line)
         {
-            circle.Draw(spriteBatch);
+            circle.Draw(spriteBatch, (int)angle);
             int lastPoint = line.Count;
             for (int i = 0; i < line.Count; i++)
             {

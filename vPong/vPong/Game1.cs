@@ -75,6 +75,7 @@ namespace vPong
 
             graphics.PreferredBackBufferWidth = 800;
             graphics.PreferredBackBufferHeight = 600;
+
             graphics.ApplyChanges();
 
             base.Initialize();

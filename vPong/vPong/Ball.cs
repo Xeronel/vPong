@@ -41,15 +41,11 @@ namespace vPong
         private CollisionDetection _rightPaddleCollision;
         private CollisionDetection _brickCollision;
         private IEnumerable<Brick> _brickWall;
-        private Vector2 _fez;
 
         private int _leftMax;
         private int _topMax;
         private int _rightMax;
         private int _botMax;
-
-
-        private SpriteBatch _spriteBatch;
 
         public Ball(ContentManager content, Screen screenXY, List<Brick> brickW)
         {
