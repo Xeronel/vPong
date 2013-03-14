@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "vPong", "vPong\vPong\vPong.csproj", "{7FD8DADF-1B36-48C6-9E65-F521F2B10F8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "vPongContent", "vPong\vPongContent\vPongContent.contentproj", "{6873ECA2-2C1F-4E31-BED1-C9CC1ED7811E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataTypes", "DataTypes\DataTypes.csproj", "{D74A7AB4-779D-4113-A088-0A008898E9A1}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://dev.halfcrap.com/tfs/halfcrap
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = vPong\\vPongContent\\vPongContent.contentproj
+		SccProjectName1 = vPong/vPongContent
+		SccLocalPath1 = vPong\\vPongContent
+		SccProjectUniqueName2 = DataTypes\\DataTypes.csproj
+		SccProjectName2 = DataTypes
+		SccLocalPath2 = DataTypes
+		SccProjectUniqueName3 = vPong\\vPong\\vPong.csproj
+		SccProjectName3 = vPong/vPong
+		SccLocalPath3 = vPong\\vPong
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7FD8DADF-1B36-48C6-9E65-F521F2B10F8E}.Debug|x86.ActiveCfg = Debug|x86
+		{7FD8DADF-1B36-48C6-9E65-F521F2B10F8E}.Debug|x86.Build.0 = Debug|x86
+		{7FD8DADF-1B36-48C6-9E65-F521F2B10F8E}.Release|x86.ActiveCfg = Release|x86
+		{7FD8DADF-1B36-48C6-9E65-F521F2B10F8E}.Release|x86.Build.0 = Release|x86
+		{6873ECA2-2C1F-4E31-BED1-C9CC1ED7811E}.Debug|x86.ActiveCfg = Debug|x86
+		{6873ECA2-2C1F-4E31-BED1-C9CC1ED7811E}.Release|x86.ActiveCfg = Release|x86
+		{D74A7AB4-779D-4113-A088-0A008898E9A1}.Debug|x86.ActiveCfg = Debug|x86
+		{D74A7AB4-779D-4113-A088-0A008898E9A1}.Debug|x86.Build.0 = Debug|x86
+		{D74A7AB4-779D-4113-A088-0A008898E9A1}.Release|x86.ActiveCfg = Release|x86
+		{D74A7AB4-779D-4113-A088-0A008898E9A1}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
