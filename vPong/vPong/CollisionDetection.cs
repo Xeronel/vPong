@@ -189,7 +189,7 @@ namespace vPong
                 if (i == line.Count - 1)
                     spriteBatch.Draw(texture, new Rectangle((int)line[i].X, (int)line[i].Y, 1, 1), Color.White);
                 else
-                    spriteBatch.Draw(texture, new Rectangle((int)line[i].X, (int)line[i].Y, 1, 1), Color.Red);
+                    spriteBatch.Draw(texture, new Rectangle((int)line[i].X, (int)line[i].Y, 1, 1), Color.DarkOrange);
             }
         }
     }
