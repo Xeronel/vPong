@@ -45,10 +45,8 @@ namespace vPong
         }
 
         private int _degree;
-        private float angle;
         private Vector2 _position;
         private SideList _side;
-        private List<Vector2> _line;
         private Circle circle;
 
         public void Test(Vector2 circleOrigin, float circleRadius, Rectangle rectangle)
@@ -129,18 +127,25 @@ namespace vPong
 
         public List<Vector2> RayTrace(Vector2 origin, Vector2 destination, float radius, ContentManager content)
         {
-            circle = new Circle(100, origin, content);    
-            _line = new List<Vector2>();
+            List<Vector2> _line = new List<Vector2>();
+            List<Vector2> _line2 = new List<Vector2>();
+
+            circle = new Circle(100, origin, content);
+            
             float m = (origin.Y - destination.Y) / (origin.X - destination.X);
             float b = origin.Y - (m * origin.X);
-
-            double deltaY = destination.Y - origin.Y;
-            double deltaX = destination.X - origin.X;
-            angle = (float)(Math.Atan2(deltaY, deltaX) * 180 / Math.PI);
+            float angle = GetAngle(origin, destination);
 
             //Center Line
             float x1 = origin.X + radius * (float)Math.Cos(MathHelper.ToRadians(angle));
             float y1 = origin.Y + radius * (float)Math.Sin(MathHelper.ToRadians(angle));
+
+            //Bottom Line
+            float x2 = origin.X + radius * (float)Math.Cos(MathHelper.ToRadians(angle + 90));
+            float y2 = origin.Y + radius * (float)Math.Sin(MathHelper.ToRadians(angle + 90));
+
+            //Top Line
+
 
             //Up & Right or Down & Right
             if (m < 0 && origin.X < destination.X || m > 0 && origin.X < destination.X)
@@ -155,6 +160,29 @@ namespace vPong
             }
 
             origin = new Vector2(x1, y1);
+
+            _line = CreateLine(origin, destination, m, b);
+
+            return _line;
+        }
+
+        
+
+        private float GetAngle(Vector2 origin, Vector2 destination)
+        {
+            double deltaY = destination.Y - origin.Y;
+            double deltaX = destination.X - origin.X;
+            float angle = (float)(Math.Atan2(deltaY, deltaX) * 180 / Math.PI);
+
+            return angle;
+        }
+
+        private List<Vector2> CreateLine(Vector2 origin, Vector2 destination, float m, float b)
+        {
+            List<Vector2> _line = new List<Vector2>();
+            //float m = (origin.Y - destination.Y) / (origin.X - destination.X);
+            //float b = origin.Y - (m * origin.X);
+
 
             for (int x = (int)origin.X; x < (int)destination.X; x++)
             {
@@ -171,6 +199,9 @@ namespace vPong
             return _line;
         }
 
+
+
+
         public void PerPixel(Texture2D texture)
         {
             Color[] _obj1TextureData = new Color[texture.Width * texture.Height];
@@ -184,7 +215,7 @@ namespace vPong
 
         public void DrawLine(SpriteBatch spriteBatch, Texture2D texture, List<Vector2> line)
         {
-            circle.Draw(spriteBatch, (int)angle);
+            circle.Draw(spriteBatch);
             int lastPoint = line.Count;
             for (int i = 0; i < line.Count; i++)
             {

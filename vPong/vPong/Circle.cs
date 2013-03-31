@@ -36,13 +36,10 @@ namespace vPong
         {
         }
 
-        public void Draw(SpriteBatch spriteBatch, int angle)
+        public void Draw(SpriteBatch spriteBatch)
         {
             for (int i = 0; i < Points.Count; i++)
-                if (i == angle || i == angle + 90 || i == angle - 90)
-                    spriteBatch.Draw(_texture, Points[i], new Rectangle(0, 0, _texture.Width, _texture.Height), Color.Red);
-                else
-                    spriteBatch.Draw(_texture, Points[i], new Rectangle(0, 0, _texture.Width, _texture.Height), Color.White);
+                spriteBatch.Draw(_texture, Points[i], new Rectangle(0, 0, _texture.Width, _texture.Height), Color.White);
         }
     }
 }
